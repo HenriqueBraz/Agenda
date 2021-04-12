@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+<div class="bloco">
+    <div class="card">
+        <div class="card-header">
+            <div class="form-group" align="center">
+                <h4>Confirmação de agendamento: </h4>
+            </div>
+        </div>
+        <br>
+        <div class="row" align="center">
+            <div class="col-12">
+                <h3>Tudo certo!</h3>
+            </div>
+        </div>
+        <div class="row" align="center">
+            <div class="col-12">
+                Entraremos em contato com um dia de antecedência para confirmar sua presença.
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="card">
+        <br>
+        <div class="row" align="center">
+            <div class="col-12">
+                <h3>Resumo:</h3>
+            </div>
+        </div>
+        <br>
+        <div class="row" align="center">
+            <div class="col-12">
+                Especialidade: Cardiologista
+            </div>
+        </div>
+        <br>
+          <div class="row" align="center">
+            <div class="col-12">
+                Profossional: Dr. Alberto
+            </div>
+        </div>
+        <br>
+          <div class="row" align="center">
+            <div class="col-12">
+                Data: 13/04/2021
+            </div>
+        </div>
+        <br>
+          <div class="row" align="center">
+            <div class="col-12">
+                Horário: 10:30
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="form-group" align="center" >
+        <button class="btn-danger"><a href="{{ url_for('agenda') }}" ><font color=white> Voltar a página inicial</font></a></button>
+    </div>
+
+</div>
+
+
+{% endblock %}

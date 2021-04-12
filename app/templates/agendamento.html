@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<br>
+<div class="bloco">
+    <form method="post">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+        <div class="card">
+            <div class="card-header">
+                <div class="form-group">
+                    <h4>Agendar Consulta:  </h4>
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <div class="row">
+                    <label class="control-label col-4 text-right">Especialidade:</label>
+                    <div class="col-3">
+                        <select id="especialidade" name="especialidade" required>
+                            <option value="">Selecione</option>
+                            <option value="CARDIOLOGISTA">Cardiologista</option>
+                            <option value="CLÍNICO GERAL">Clínico Geral</option>
+                            <option value="PNEUMOLOGISTA">Pneumologista</option>
+                            <option value="PEDIATRIA">Pediatria</option>
+                            <option value="OTORRINOLARINGOLOGISTA">Otorrinolaringologista</option>
+                            <option value="TODOS">Todos</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <br><br>
+            <div class="form-group">
+                <div class="row">
+                    <label class="control-label col-4 text-right">Profissional:</label>
+                    <div class="col-3">
+                        <select id="profissional" name="profissional" required>
+                            <option value="">Selecione</option>
+                            <option value="CARLOS">Dr. Carlos</option>
+                            <option value="MARIANA">Dra. Mariana</option>
+                            <option value="ALBERTO">Dr. Alberto</option>
+                            <option value="PEDRO">Dr. Pedro</option>
+                            <option value="SIMONE">Dra. Simone</option>
+                            <option value="TODOS">Todos</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <br><br>
+            <div class="form-group">
+                <div class="row">
+                    <label class="control-label col-4 text-right">Selecione o dia</label>
+                    <div class="col-3">
+                        <input type="text"  class="date-picker" name="startDate" id="startDate" readonly="readonly" required />
+                    </div>
+                </div>
+            </div>
+            <br><br>
+            <div class="form-group">
+                <div class="row">
+                    <label class="control-label col-4 text-right" for="hora-cons">Escolha o horário da consulta: </label>
+                    <div class="col-3">
+                        <input id="hora-cons" type="time" name="hora-cons" value="08:00" min="08:00" max="18:00" required>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="form-group" align="center" >
+            <button class="btn-danger"><a href="{{ url_for('confirmacao') }}" ><font color=white> Agendar Consulta</font></a></button>
+        </div>
+
+    </form>
+</div>
+
+<!-- Datepicker -->
+<script type=text/javascript src="{{url_for('static', filename='js/scripts.js') }}"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
+<script src="https://code.jquery.com/jquery-1.8.2.js"></script>
+<script src="https://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
+
+{% endblock %}
